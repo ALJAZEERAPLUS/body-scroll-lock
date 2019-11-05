@@ -204,6 +204,7 @@ export const clearAllBodyScrollLocks = (): void => {
 
     // Reset initial clientY.
     initialClientY = -1;
+    restoreOverflowSetting();
   } else {
     restoreOverflowSetting();
     locks = [];
@@ -230,6 +231,7 @@ export const enableBodyScroll = (targetElement: any): void => {
 
       documentListenerAdded = false;
     }
+    restoreOverflowSetting();
   } else {
     locks = locks.filter(lock => lock.targetElement !== targetElement);
     if (!locks.length) {
