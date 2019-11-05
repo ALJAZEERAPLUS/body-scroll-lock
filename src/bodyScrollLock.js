@@ -174,6 +174,7 @@ export const disableBodyScroll = (targetElement: any, options?: BodyScrollOption
         document.addEventListener('touchmove', preventDefault, hasPassiveEvents ? { passive: false } : undefined);
         documentListenerAdded = true;
       }
+      setOverflowHidden(options);
     }
   } else {
     setOverflowHidden(options);
